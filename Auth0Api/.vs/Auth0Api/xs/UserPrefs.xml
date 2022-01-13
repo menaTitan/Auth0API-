@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{F06E6534-0613-4C8D-8B1A-8CD205743FC1}|Default">
+  <MonoDevelop.Ide.ItemProperties.Auth0Api PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Auth0Api/obj/Debug/net6.0/Auth0Api.GlobalUsings.g.cs">
+    <Files>
+      <File FileName="Auth0Api/Controllers/WeatherForecastController.cs" Line="36" Column="6" />
+      <File FileName="Auth0Api/obj/Debug/net6.0/Auth0Api.GlobalUsings.g.cs" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Auth0Api" expanded="True" selected="True">
+            <Node name="Auth0Api" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+              <Node name="Controllers" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
