@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mserg\\Documents\\Auth0API-\\Auth0Api\\Auth0Api\\Auth0Api.csproj": {}
+    "C:\\demo\\DotNetCoreAuth0API\\Auth0Api\\Auth0Api\\Auth0Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mserg\\Documents\\Auth0API-\\Auth0Api\\Auth0Api\\Auth0Api.csproj": {
+    "C:\\demo\\DotNetCoreAuth0API\\Auth0Api\\Auth0Api\\Auth0Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mserg\\Documents\\Auth0API-\\Auth0Api\\Auth0Api\\Auth0Api.csproj",
+        "projectUniqueName": "C:\\demo\\DotNetCoreAuth0API\\Auth0Api\\Auth0Api\\Auth0Api.csproj",
         "projectName": "Auth0Api",
-        "projectPath": "C:\\Users\\mserg\\Documents\\Auth0API-\\Auth0Api\\Auth0Api\\Auth0Api.csproj",
-        "packagesPath": "C:\\Users\\mserg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mserg\\Documents\\Auth0API-\\Auth0Api\\Auth0Api\\obj\\",
+        "projectPath": "C:\\demo\\DotNetCoreAuth0API\\Auth0Api\\Auth0Api\\Auth0Api.csproj",
+        "packagesPath": "C:\\Users\\Menas\\.nuget\\packages\\",
+        "outputPath": "C:\\demo\\DotNetCoreAuth0API\\Auth0Api\\Auth0Api\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\mserg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Menas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -40,7 +44,15 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
             "Microsoft.AspNetCore.Mvc.Formatters.Xml": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.ResponseCaching": {
               "target": "Package",
               "version": "[2.2.0, )"
             },
