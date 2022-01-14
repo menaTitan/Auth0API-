@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\demo\\DotNetCoreAuth0API\\Auth0Api\\Auth0Api\\Auth0Api.csproj": {}
+    "C:\\Users\\mserg\\Documents\\Auth0API-\\Auth0Api\\Auth0Api\\Auth0Api.csproj": {}
   },
   "projects": {
-    "C:\\demo\\DotNetCoreAuth0API\\Auth0Api\\Auth0Api\\Auth0Api.csproj": {
+    "C:\\Users\\mserg\\Documents\\Auth0API-\\Auth0Api\\Auth0Api\\Auth0Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\demo\\DotNetCoreAuth0API\\Auth0Api\\Auth0Api\\Auth0Api.csproj",
+        "projectUniqueName": "C:\\Users\\mserg\\Documents\\Auth0API-\\Auth0Api\\Auth0Api\\Auth0Api.csproj",
         "projectName": "Auth0Api",
-        "projectPath": "C:\\demo\\DotNetCoreAuth0API\\Auth0Api\\Auth0Api\\Auth0Api.csproj",
-        "packagesPath": "C:\\Users\\Menas\\.nuget\\packages\\",
-        "outputPath": "C:\\demo\\DotNetCoreAuth0API\\Auth0Api\\Auth0Api\\obj\\",
+        "projectPath": "C:\\Users\\mserg\\Documents\\Auth0API-\\Auth0Api\\Auth0Api\\Auth0Api.csproj",
+        "packagesPath": "C:\\Users\\mserg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\mserg\\Documents\\Auth0API-\\Auth0Api\\Auth0Api\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Menas\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\mserg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
