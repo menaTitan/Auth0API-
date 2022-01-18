@@ -1,4 +1,5 @@
-﻿using Auth0Api.Data;
+﻿using System.Security.Claims;
+using Auth0Api.Data;
 using Auth0Api.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -23,6 +24,7 @@ namespace Auth0Api.Controllers
 
         [HttpGet]
         [ResponseCache(Duration = 60, Location = ResponseCacheLocation.Client)]
+        [AllowAnonymous]
         public IActionResult Get(string? sort)
         {
             IQueryable<Quote> quotes;
@@ -80,40 +82,68 @@ namespace Auth0Api.Controllers
         [HttpPost]
         public IActionResult Post([FromBody] Quote quote)
         {
+           string UserId =  User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+           quote.UserId = UserId;
             _quotesDbContext.Quotes.Add(quote);
-             _quotesDbContext.SaveChanges();
-             return StatusCode(StatusCodes.Status201Created, quote);
+            _quotesDbContext.SaveChanges();
+            return StatusCode(StatusCodes.Status201Created, quote);
         }
 
         // PUT api/<QuotesController>/5
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Quote quote)
-        {
-           ;
+        { 
+            string userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
            var entity = _quotesDbContext.Quotes.Find(id);
            if (entity == null)
                return StatusCode(StatusCodes.Status404NotFound, $"No Record Found against this Id {id}.");
 
-           entity.Title = quote.Title;
-           entity.Description = quote.Description;
-           entity.Author = quote.Author;
-           entity.Author = quote.Type;
-           entity.CreatedAt = quote.CreatedAt;
-           _quotesDbContext.SaveChanges();
-           return StatusCode(StatusCodes.Status201Created, entity);
+           if (userId == entity.UserId)
+           {
+
+               entity.Title = quote.Title;
+               entity.Description = quote.Description;
+               entity.Author = quote.Author;
+               entity.Author = quote.Type;
+               entity.CreatedAt = quote.CreatedAt;
+               _quotesDbContext.SaveChanges();
+               return StatusCode(StatusCodes.Status201Created, entity);
+            }
+           else
+           {
+               return StatusCode(StatusCodes.Status401Unauthorized, "Sorry you can't update this record..");
+            }
+
         }
 
         // DELETE api/<QuotesController>/5
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-             var entity = _quotesDbContext.Quotes.Find(id);
-             if (entity == null)
+            var entity = _quotesDbContext.Quotes.Find(id);
+            if (entity == null)
                  return StatusCode(StatusCodes.Status404NotFound, $"No Record Found against this Id {id}.");
+            if (User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value == entity.UserId)
+            {
+                _quotesDbContext.Quotes.Remove(entity);
+                _quotesDbContext.SaveChanges();
+                return StatusCode(StatusCodes.Status202Accepted, "The Quote has been deleted.");
 
-            _quotesDbContext.Quotes.Remove(entity);
-            _quotesDbContext.SaveChanges();
-            return StatusCode(StatusCodes.Status201Created, "The Quote has been deleted.");
+            }
+            else
+            {
+                return StatusCode(StatusCodes.Status401Unauthorized,
+                    "Sorry you can't delete this record...");
+            }
+        }
+
+        [HttpGet("[action]")]
+        public IActionResult MyQuote()
+        {
+            string userId = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            var quotes = _quotesDbContext.Quotes.Where(q => q.UserId == userId);
+            return Ok(quotes);
+
         }
     }
 }

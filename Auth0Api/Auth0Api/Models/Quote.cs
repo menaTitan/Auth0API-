@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualBasic;
 using System.ComponentModel.DataAnnotations;
+using Newtonsoft.Json;
 
 namespace Auth0Api.Models
 {
@@ -19,5 +20,7 @@ namespace Auth0Api.Models
         public string Type { get; set; }
 
         [Required] public DateTime? CreatedAt { get; set; } = DateTime.Now;
+        [JsonIgnore]
+        public string UserId { get; set; }
     }
 }

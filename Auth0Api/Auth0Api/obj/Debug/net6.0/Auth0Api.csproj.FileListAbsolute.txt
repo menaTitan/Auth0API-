@@ -150,4 +150,3 @@ C:\Users\mserg\Documents\Auth0API-\Auth0Api\Auth0Api\obj\Debug\net6.0\ref\Auth0A
 C:\Users\mserg\Documents\Auth0API-\Auth0Api\Auth0Api\obj\Debug\net6.0\Auth0Api.pdb
 C:\Users\mserg\Documents\Auth0API-\Auth0Api\Auth0Api\obj\Debug\net6.0\Auth0Api.genruntimeconfig.cache
 C:\demo\DotNetCoreAuth0API\Auth0Api\Auth0Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\demo\DotNetCoreAuth0API\Auth0Api\Auth0Api\obj\Debug\net6.0\Auth0Api.csproj.AssemblyReference.cache
